@@ -1,39 +1,43 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Eliminar {
     void mostrar(Contacto contacto) {
 
         System.out.println("······························");
-        System.out.println("|      Editar contacto       |");
+        System.out.println("|      Eliminar contacto       |");
         System.out.println("······························");
 
-        System.out.println("Escriba el nuevo nombre del contacto: ");
-        contacto.nombre = Main.scanner.nextLine();
+        Scanner VerifyEliminar = new Scanner(System.in);
+        System.out.print("\033[31m" + "Una vez eliminado el contacto no habra manera de " +
+                "recuperarlo, esta seguro de eliminar el contacto?(S/N): " + "\033[0m");
+        String next = VerifyEliminar.next();
 
-        System.out.println("Escriba los nuevos apellidos del contacto: ");
-        contacto.apellidos = Main.scanner.nextLine();
+        if (next.equals("S") || next.equals("s")){
+            contacto.nombre = null;
+            contacto.apellidos = null;
+            contacto.nummovil = null;
+            contacto.numfijo = null;
+            contacto.correo = null;
 
-        System.out.println("Escriba el nuevo numero de telefono movil del contacto: ");
-        contacto.nummovil = Main.scanner.nextLine();
-
-        System.out.println("Escriba el nuevo numero de telefono fijo del contacto: ");
-        contacto.nummovil = Main.scanner.nextLine();
-
-        System.out.println("Escriba el nuevo correo electronico del contacto: ");
-        contacto.correo = Main.scanner.nextLine();
+            Mensaje mensaje = new Mensaje();
+            mensaje.mostrarInfo("Contacto Eliminado!");
+        } else if (next.equals("N") || next.equals("n")){
+            Mensaje mensaje = new Mensaje();
+            mensaje.mostrarInfo("Operacion cancelada...");
+        }
 
         Mensaje mensaje = new Mensaje();
-        mensaje.mostrarInfo("Contacto actualizado!");
-
         mensaje.mostrarOpcion("¿Que desea hacer a continuacion?");
 
         Menu menu = new Menu();
-        String[] opciones = {"Editar otro contacto", "Volver al menu principal"};
+        String[] opciones = {"Listar Contactos", "Volver al menu principal"};
         String opcion = menu.elegirOpcion(opciones);
 
         if ("1".equals(opcion)) {
-            PantallaEditar pantallaEditar = new PantallaEditar();
-            pantallaEditar.mostrar();
+            PantallaListar pantallaListar = new PantallaListar();
+            pantallaListar.mostrar();
         } else if("2".equals(opcion)){
             PantallaMenu pantallaMenu = new PantallaMenu();
             pantallaMenu.mostrar();

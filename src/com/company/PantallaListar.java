@@ -15,7 +15,7 @@ public class PantallaListar {
         mensaje.mostrarOpcion("Que desea hacer a continuacion");
 
         Menu menu = new Menu();
-        String[] opciones = {"Ver informacion del contacto", "Editar contacto de la lista", "Nuevo contacto", "Volver al menu principal"};
+        String[] opciones = {"Ver informacion del contacto", "Editar contacto de la lista", "Nuevo contacto", "Eliminar contacto", "Volver al menu principal"};
         String opcion = menu.elegirOpcion(opciones);
 
         if ("1".equals(opcion)) {
@@ -28,6 +28,9 @@ public class PantallaListar {
             PantallaCrear pantallaCrear = new PantallaCrear();
             pantallaCrear.mostrar();
         } else if("4".equals(opcion)){
+            PantallaEliminar pantallaEliminar = new PantallaEliminar();
+            pantallaEliminar.mostrar();
+        } else if("5".equals(opcion)){
             PantallaMenu pantallaMenu = new PantallaMenu();
             pantallaMenu.mostrar();
         }
