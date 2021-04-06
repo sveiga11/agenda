@@ -2,9 +2,11 @@ package com.company;
 
 public class PantallaCrear {
     void mostrar() {
-        System.out.println("······························");
-        System.out.println("|      Añadir contacto       |");
-        System.out.println("······························");
+        System.out.println();
+        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
+        System.out.println("\033[30m" + "\033[44m" + "|       Añadir contacto      |" + "\033[0m");
+        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
+        System.out.println("\033[30m");
 
         Contacto contacto = new Contacto();
         boolean añadido = false;
@@ -19,7 +21,7 @@ public class PantallaCrear {
         contacto.nummovil = Main.scanner.nextLine();
 
         System.out.println("Numero del telefono fijo del contacto: ");
-        contacto.nummovil = Main.scanner.nextLine();
+        contacto.numfijo = Main.scanner.nextLine();
 
         System.out.println("Correo electronico del contacto: ");
         contacto.correo = Main.scanner.nextLine();

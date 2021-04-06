@@ -4,9 +4,7 @@ import java.util.Scanner;
 
 public class InfoContacto {
     void mostrar(Contacto contacto) {
-        System.out.println("······························");
-        System.out.println("|  Informacion del contacto  |");
-        System.out.println("······························");
+        System.out.println();
 
             System.out.print(contacto.nombre + " ");
             System.out.print(contacto.apellidos + " ");
@@ -16,7 +14,7 @@ public class InfoContacto {
 
         String turnListado;
         Scanner teclado = new Scanner(System.in);
-        System.out.println("Presiona enter para volver al listado de contactos: ");
+        System.out.println("Presiona enter para volver al menu: ");
         try {
             turnListado = teclado.nextLine();
         } catch (Exception e) {

@@ -4,10 +4,7 @@ import java.util.Scanner;
 
 public class Eliminar {
     void mostrar(Contacto contacto) {
-
-        System.out.println("······························");
-        System.out.println("|      Eliminar contacto       |");
-        System.out.println("······························");
+        System.out.println();
 
         Scanner VerifyEliminar = new Scanner(System.in);
         System.out.print("\033[31m" + "Una vez eliminado el contacto no habra manera de " +

@@ -2,9 +2,11 @@ package com.company;
 
 public class PantallaEditar {
     void mostrar() {
-        System.out.println("······························");
-        System.out.println("|      Editar contacto       |");
-        System.out.println("······························");
+        System.out.println();
+        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
+        System.out.println("\033[30m" + "\033[44m" + "|      Editar contactos      |" + "\033[0m");
+        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
+        System.out.println("\033[30m");
 
         System.out.println("Escriba el nombre del contacto que desea editar: ");
         String search = Main.scanner.nextLine();

@@ -2,10 +2,7 @@ package com.company;
 
 public class Editar {
     void mostrar(Contacto contacto) {
-
-        System.out.println("······························");
-        System.out.println("|      Editar contacto       |");
-        System.out.println("······························");
+        System.out.println();
 
         System.out.println("Escriba el nuevo nombre del contacto: ");
         contacto.nombre = Main.scanner.nextLine();

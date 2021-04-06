@@ -2,14 +2,21 @@ package com.company;
 
 public class PantallaListar {
     void mostrar(){
-        System.out.println("······························");
-        System.out.println("|     Lista de contactos     |");
-        System.out.println("······························");
+        System.out.println();
+        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
+        System.out.println("\033[30m" + "\033[44m" + "|     Lista de contactos     |" + "\033[0m");
+        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
+        System.out.println("\033[30m");
 
         for(Contacto contacto: Main.agendaContactos.contactos){
-            System.out.print(contacto.nombre + " ");
-            System.out.println(contacto.apellidos);
-        }
+            if (contacto.nombre == null){
+            } else {
+                System.out.print(contacto.nombre + " ");
+            }
+            if (contacto.nombre == null){
+            } else {
+                System.out.println(contacto.apellidos);
+            }        }
 
         Mensaje mensaje = new Mensaje();
         mensaje.mostrarOpcion("Que desea hacer a continuacion");
