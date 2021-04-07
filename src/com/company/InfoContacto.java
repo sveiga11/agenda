@@ -6,10 +6,10 @@ public class InfoContacto {
     void mostrar(Contacto contacto) {
         System.out.println();
 
-            System.out.print(contacto.nombre + " ");
-            System.out.print(contacto.apellidos + " ");
-            System.out.print(contacto.nummovil + " ");
-            System.out.print(contacto.numfijo + " ");
+            System.out.print(contacto.nombre + " | ");
+            System.out.print(contacto.apellidos + " | ");
+            System.out.print(contacto.nummovil + " | ");
+            System.out.print(contacto.numfijo + " | ");
             System.out.println(contacto.correo);
 
         String turnListado;

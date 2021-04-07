@@ -2,11 +2,8 @@ package com.company;
 
 public class PantallaEliminar {
     void mostrar() {
-        System.out.println();
-        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
-        System.out.println("\033[30m" + "\033[44m" + "|     Eliminar contactos     |" + "\033[0m");
-        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
-        System.out.println("\033[30m");
+        Titulo titulo = new Titulo();
+        titulo.mostrar("         Eliminar Contacto         ");
 
         System.out.println("Escriba el nombre del contacto que desea eliminar: ");
         String search = Main.scanner.nextLine();

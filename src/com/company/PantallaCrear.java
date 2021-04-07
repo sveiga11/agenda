@@ -2,11 +2,8 @@ package com.company;
 
 public class PantallaCrear {
     void mostrar() {
-        System.out.println();
-        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
-        System.out.println("\033[30m" + "\033[44m" + "|       Añadir contacto      |" + "\033[0m");
-        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
-        System.out.println("\033[30m");
+        Titulo titulo = new Titulo();
+        titulo.mostrar("          Agregar Contacto         ");
 
         Contacto contacto = new Contacto();
         boolean añadido = false;
@@ -39,7 +36,7 @@ public class PantallaCrear {
         mensaje.mostrarOpcion("¿Que desea hacer a continuacion?");
 
         Menu menu = new Menu();
-        String[] opciones = {"Nuevo contacto", "Listar contactos", "Volver al menu principal"};
+        String[] opciones = {"Nuevo contacto", "Listar contactos", "Volver al menu principal", "Salir"};
         String opcion = menu.elegirOpcion(opciones);
 
         if ("1".equals(opcion)) {
@@ -51,6 +48,7 @@ public class PantallaCrear {
         } else if("3".equals(opcion)){
             PantallaMenu pantallaMenu = new PantallaMenu();
             pantallaMenu.mostrar();
-        }
+        } else if("4".equals(opcion)){
+            System.exit(0);}
     }
     }

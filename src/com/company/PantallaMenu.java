@@ -3,10 +3,8 @@ package com.company;
 public class PantallaMenu {
     boolean mostrar(){
 
-        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
-        System.out.println("\033[30m" + "\033[44m" + "|     AGENDA DE CONTACTOS    |" + "\033[0m");
-        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
-        System.out.println("\033[30m");
+        Titulo titulo = new Titulo();
+        titulo.mostrar("        AGENDA DE CONTACTOS        ");
 
         Menu menu = new Menu();
         String[] opciones = {"Nuevo contacto", "Listar contactos", "Editar contacto" ,"Eliminar contacto", "Salir"};

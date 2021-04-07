@@ -2,11 +2,8 @@ package com.company;
 
 public class PantallaEditar {
     void mostrar() {
-        System.out.println();
-        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
-        System.out.println("\033[30m" + "\033[44m" + "|      Editar contactos      |" + "\033[0m");
-        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
-        System.out.println("\033[30m");
+        Titulo titulo = new Titulo();
+        titulo.mostrar("          Editar contacto          ");
 
         System.out.println("Escriba el nombre del contacto que desea editar: ");
         String search = Main.scanner.nextLine();
@@ -26,7 +23,7 @@ public class PantallaEditar {
             mensaje.mostrarOpcion("Que desea hacer a continuacion");
 
             Menu menu = new Menu();
-            String[] opciones = {"Lista de contactos", "Editar otro contacto", "Volver al menu principal"};
+            String[] opciones = {"Lista de contactos", "Editar otro contacto", "Volver al menu principal", "Salir"};
             String opcion = menu.elegirOpcion(opciones);
 
             if ("1".equals(opcion)) {
@@ -38,7 +35,8 @@ public class PantallaEditar {
             } else if("3".equals(opcion)){
                 PantallaMenu pantallaMenu = new PantallaMenu();
                 pantallaMenu.mostrar();
-            }
+            } else if("4".equals(opcion)){
+                System.exit(0);}
         }
         else {
             Editar editar = new Editar();

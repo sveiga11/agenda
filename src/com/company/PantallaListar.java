@@ -2,11 +2,8 @@ package com.company;
 
 public class PantallaListar {
     void mostrar(){
-        System.out.println();
-        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
-        System.out.println("\033[30m" + "\033[44m" + "|     Lista de contactos     |" + "\033[0m");
-        System.out.println("\033[30m" + "\033[44m" + "······························" + "\033[0m");
-        System.out.println("\033[30m");
+        Titulo titulo = new Titulo();
+        titulo.mostrar("        Lista de contactos         ");
 
         for(Contacto contacto: Main.agendaContactos.contactos){
             if (contacto.nombre == null){
@@ -22,7 +19,7 @@ public class PantallaListar {
         mensaje.mostrarOpcion("Que desea hacer a continuacion");
 
         Menu menu = new Menu();
-        String[] opciones = {"Ver informacion del contacto", "Editar contacto de la lista", "Nuevo contacto", "Eliminar contacto", "Volver al menu principal"};
+        String[] opciones = {"Ver informacion del contacto", "Editar contacto de la lista", "Nuevo contacto", "Eliminar contacto", "Volver al menu principal", "Salir"};
         String opcion = menu.elegirOpcion(opciones);
 
         if ("1".equals(opcion)) {
@@ -40,6 +37,7 @@ public class PantallaListar {
         } else if("5".equals(opcion)){
             PantallaMenu pantallaMenu = new PantallaMenu();
             pantallaMenu.mostrar();
-        }
+        } else if("6".equals(opcion)){
+            System.exit(0);}
     }
 }
